@@ -1,0 +1,51 @@
+<div class="container">
+  <div>
+    <label for="num1">Input num 1</label>
+    <input
+      #num1="ngModel"
+      ngModel
+      class="form-control"
+      type="number"
+      name="num1"
+      id=""
+      required
+      [pattern]="integreRegex"
+    />
+  </div>
+  <div>
+    <label for="num2">Input num 2</label>
+    <input
+      #num2="ngModel"
+      ngModel
+      class="form-control"
+      type="number"
+      name="num2"
+      id=""
+      required
+      [pattern]="integreRegex"
+    />
+  </div>
+  <div>
+    <button class="btn btn-primary" (click)="add(num1.value, num2.value)">
+      add
+    </button>
+    <button class="btn btn-primary" (click)="sub(num1.value, num2.value)">
+      sub
+    </button>
+    <button class="btn btn-primary" (click)="mul(num1.value, num2.value)">
+      mul
+    </button>
+    <button class="btn btn-primary" (click)="div(num1.value, num2.value)">
+      div
+    </button>
+  </div>
+  <div *ngIf="!valid">
+    <small class="text-danger">Enter valid number</small>
+  </div>
+  <div *ngIf="num1.errors && num1.touched">
+    <small class="text-danger">Enter valid number</small>
+  </div>
+  <div>
+    <h3>result is {{ result }}</h3>
+  </div>
+</div>

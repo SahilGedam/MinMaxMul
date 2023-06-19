@@ -1,0 +1,19 @@
+
+<div class="container">
+    <div>
+
+        <h2>click on buttons to change its color</h2><br>
+    </div>
+    <div>
+
+        <button  [style.background]="buttonColor" #blueButton (click)="changeColor('blue')">
+            Blue
+        </button>
+        <button  [style.background]="buttonColor" #greenButton (click)="changeColor('green')">
+            Green
+        </button>
+        <button  [style.background]="buttonColor" #redButton (click)="changeColor('red')">
+            Red
+        </button>
+    </div>
+</div>
