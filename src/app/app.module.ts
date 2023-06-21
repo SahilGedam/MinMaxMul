@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MinMaxComponent } from './projects/min-max/min-max.component';
 import { ButtonColorComponent } from './projects/button-color/button-color.component';
 import { RouterComponent } from './projects/router/router.component';
@@ -25,7 +25,7 @@ import { SwordAndSoldierComponent } from './projects/sword-and-soldier/sword-and
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule
+    AppRoutingModule,FormsModule,ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

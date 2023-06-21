@@ -5,7 +5,7 @@
       #num1="ngModel"
       ngModel
       class="form-control"
-      type="number"
+      type="text"
       name="num1"
       id=""
       required
@@ -18,7 +18,7 @@
       #num2="ngModel"
       ngModel
       class="form-control"
-      type="number"
+      type="text"
       name="num2"
       id=""
       required
@@ -43,9 +43,12 @@
     <small class="text-danger">Enter valid number</small>
   </div>
   <div *ngIf="num1.errors && num1.touched">
-    <small class="text-danger">Enter valid number</small>
+    <small class="text-danger">Enter valid number 1</small>
   </div>
-  <div>
+  <div *ngIf="num2.errors && num2.touched">
+    <small class="text-danger">Enter valid number 2</small>
+  </div>
+  <div *ngIf="clicked">
     <h3>result is {{ result }}</h3>
   </div>
 </div>

@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./sword-and-soldier.component.css'],
 })
 export class SwordAndSoldierComponent  {
+  // simplify logic
+  // add valid 
 
   soldiers = 0;
 

@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./sync-add.component.css'],
 })
 export class SyncAddComponent {
+  // simplify the logic 
   value1 = 0;
   value2 = 0;
   value3 = 0;

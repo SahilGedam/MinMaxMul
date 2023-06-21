@@ -1,83 +1,116 @@
 <div class="container">
-    <form #basicForm="ngForm" (ngSubmit)="registerFn(basicForm.value)">
-      <!-- div min  -->
-      <div>
-        <label for="minBox">Min</label>
-        <input
-          type="number"
-          class="form-control"
-          ngModel
-          placeholder="min"
-          name="min"
-          #minBox="ngModel"
-          [ngClass]="{ error: (!validMin && clicked) || (!valid3 && clicked) }"
-          id=""
-        />
-        <!-- <span [ngClass]="!validMin ? 'error-color' : 'non-error'">valid min</span> -->
-        <br />
-      </div>
-      <!-- div max  -->
-      <div>
-        <label for="maxBox">Max</label>
-        <input
-          type="number"
-          class="form-control"
-          ngModel
-          placeholder="max"
-          name="max"
-          #maxBox="ngModel"
-          [ngClass]="{ error: !validMax && clicked }"
-        />
-  
-        <!-- <span [ngClass]="!validMax ? 'error-color' : 'non-error'">valid max</span> -->
-        <br />
-      </div>
-      <div>
-        <label for="mulBox">Mul</label>
-        <input
-          class="form-control"
-          type="number"
-          ngModel
-          placeholder="mul"
-          name="mul"
-          #mulBox="ngModel"
-          id=""
-          [ngClass]="{
-            error:
-              (!validMax && !validMax && clicked) ||
-              (!valid4 && clicked) ||
-              (!valid5 && clicked)
-          }"
-        />
-      </div>
-  
-      <button class="btn btn-primary">validate mul</button>
-    </form>
-    <span [ngClass]="!validForm ? 'error-color' : 'non-error'">valid mul</span>
-  </div>
-  
-  <!-- after clicked  -->
-  <div *ngIf="!validMin && clicked">
-    <small class="text-danger" *ngIf="!validMin">Min Not a factor</small>
-  </div>
-  <div *ngIf="!validMax && clicked">
-    <small class="text-danger" *ngIf="!validMax">Max Not a factor</small>
-  </div>
-  <div *ngIf="!valid3 && clicked">
-    <small class="text-danger" *ngIf="!valid3">Min is greather than max</small>
-  </div>
-  <div *ngIf="!valid4 && clicked">
-    <small class="text-danger" *ngIf="!valid4">Mul is greather than max</small>
-  </div>
-  <div *ngIf="!valid5 && clicked">
-    <small class="text-danger" *ngIf="!valid5">Mul is not less than min</small>
-  </div>
-  
-  {{ validMin }}
+  <form #basicForm="ngForm" (ngSubmit)="registerFn(basicForm.value)">
+    <!-- div min  -->
+    <div>
+      <label for="minBox">Min</label>
+      <input
+        type="number"
+        class="form-control"
+        ngModel
+        placeholder="min"
+        name="min"
+        #minBox="ngModel"
+        id=""
+        (keyup)="clear()"
+        [ngClass]="{
+          error: (!validMin && validMax && clicked) || (!valid3 && clicked)
+        }"
+      />
+
+      <!-- [ngClass]="{
+        error: (!validMin && validMax && clicked) || (!valid3 && clicked)
+      }" -->
+
+
+      <!-- [ngStyle]="{
+          border: validMinMax && clicked ? '1px solid blue;' : '1px solid red;'
+        }" -->
+      <!-- [ngClass]="{ error: (!validMin && clicked) || (!valid3 && clicked) }" -->
+      <!-- <span [ngClass]="!validMin ? 'error-color' : 'non-error'">valid min</span> -->
+      <br />
+    </div>
+    <!-- div max  -->
+    <div>
+      <label for="maxBox">Max</label>
+      <input
+        type="number"
+        class="form-control"
+        ngModel
+        placeholder="max"
+        name="max"
+        (keyup)="clear()"
+        #maxBox="ngModel"
+        [ngClass]="{ error: !validMax && validMin && clicked }"
+      />
+      <!-- [ngClass]="!validMax && clicked ? 'error' : 'non-error'" -->
+      <!-- [ngStyle]="{
+          border: validMinMax && clicked ? '1px solid green;' : '1px solid red;'
+        }" -->
+      <!-- [ngClass]="{ error: !validMax && clicked }" -->
+
+      <!-- <span [ngClass]="!validMax ? 'error-color' : 'non-error'">valid max</span> -->
+      <br />
+    </div>
+    <!-- div mul  -->
+    <div>
+      <label for="mulBox">Mul</label>
+      <input
+        class="form-control"
+        type="number"
+        ngModel
+        placeholder="mul"
+        name="mul"
+        #mulBox="ngModel"
+        (keyup)="clear()"
+        id=""
+        [ngClass]="{
+          error:
+            (!validMin && !validMax && clicked) ||
+            (validMinMax && !valid5 && clicked) ||
+            (validMinMax && !valid4 && clicked)
+        }"
+      />
+      <!-- [ngClass]="{
+        error:
+          (!validMin && !validMax && validMinMax && clicked) ||
+          (!valid4 && validMinMax&& clicked) ||
+          (!valid5 && clicked! && validMinMax)
+      }" -->
+      <!-- [ngClass]="{
+          error:
+            (!validMax && !validMax && clicked) ||
+            (!valid4 && clicked) ||
+            (!valid5 && clicked)
+        }" -->
+    </div>
+
+    <button class="btn btn-primary">validate mul</button>
+  </form>
+  <span [ngClass]="!validForm ? 'error-color' : 'non-error'">valid mul</span>
+</div>
+<!-- <button class="btn btn-danger" (click)="clear()">clear</button> -->
+
+<!-- after clicked  -->
+<div *ngIf="!validMin && clicked">
+  <small class="text-danger" *ngIf="!validMin">Min Not a factor</small>
+</div>
+<div *ngIf="!validMax && clicked">
+  <small class="text-danger" *ngIf="!validMax">Max Not a factor</small>
+</div>
+<div *ngIf="!valid3 && clicked">
+  <small class="text-danger" *ngIf="!valid3">Min is greather than max</small>
+</div>
+<div *ngIf="!valid4 && clicked">
+  <small class="text-danger" *ngIf="!valid4">Mul is greather than max</small>
+</div>
+<div *ngIf="!valid5 && clicked">
+  <small class="text-danger" *ngIf="!valid5">Mul is not less than min</small>
+</div>
+
+<!-- {{ validMin }}
   {{ validMax }}
   {{ valid3 }}
   {{ valid4 }}
   {{ valid5 }} <br />
   valid form
-  {{ validForm }}
-  
+  {{ validForm }} -->

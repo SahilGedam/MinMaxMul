@@ -3,7 +3,7 @@
     color: red;
 }
 .non-error{
-    background-color: green;
+    border: 1px solid green;
     color: green;
 }
 .error{
