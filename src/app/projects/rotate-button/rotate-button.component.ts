@@ -11,20 +11,15 @@ export class RotateButtonComponent implements OnInit {
     this.redButton();
     this.greenButton();
     this.yellowButton();
-   
   }
-  // simplify logic // done 
+  // simplify logic // done
   color = ['red', 'green', 'yellow'];
 
   btnColor1: string = '';
   btnColor2: string = '';
   btnColor3: string = '';
   rotateColor() {
-    // let tempColor = this.color[2];
-    // this.color[2] = this.color[1];
-    // this.color[1] = this.color[0];
-    // this.color[0] = tempColor;
-    this.color=arrayMoveImmutable(this.color, -1, 0);
+    this.color = arrayMoveImmutable(this.color, -1, 0);
 
     this.btnColor1 = this.color[0];
     this.btnColor2 = this.color[1];
