@@ -13,7 +13,7 @@ export class RotateButtonComponent implements OnInit {
     this.yellowButton();
    
   }
-  // simplify logic
+  // simplify logic // done 
   color = ['red', 'green', 'yellow'];
 
   btnColor1: string = '';
@@ -32,17 +32,14 @@ export class RotateButtonComponent implements OnInit {
   }
   redButton() {
     this.btnColor1 = 'red';
-    console.log(this.btnColor1);
     this.color[0] = 'red';
   }
   greenButton() {
     this.btnColor2 = 'green';
-    console.log(this.btnColor2);
     this.color[1] = 'green';
   }
   yellowButton() {
     this.btnColor3 = 'yellow';
-    console.log(this.btnColor3);
     this.color[2] = 'yellow';
   }
 }

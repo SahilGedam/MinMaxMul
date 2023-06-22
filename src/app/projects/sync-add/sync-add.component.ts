@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./sync-add.component.css'],
 })
 export class SyncAddComponent {
-  // simplify the logic 
+  // simplify the logic by removing if else statements
   value1 = 0;
   value2 = 0;
   value3 = 0;

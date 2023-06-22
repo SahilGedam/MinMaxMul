@@ -1,6 +1,30 @@
+<div class="container">
+  <input
+    type="number"
+    class="form-control"
+    [pattern]="regex"
+    [(ngModel)]="soldiers"
+    #box="ngModel"
+    name=""
+    id=""
+  />
+  <div class="button-div">
+    <button
+      [disabled]="box.invalid"
+      (click)="find()"
+      class="btn btn-primary"
+    >
+      Check
+    </button>
 
-<input type="number" [(ngModel)]="soldiers" (keyup)="functionClick()" #box name="" id="">
+    <!-- <span></span> -->
+  </div>
+  <div>
+    <h5>last remaining is {{ result}}</h5>
+    <!-- <h5>last remaining is {{ soldierArray[0] }}</h5> -->
+  </div>
+</div>
 <!-- {{copyArray | json}} <br> -->
-last remaining soldier is - 
-{{soldierArray | json}}
+<!-- last remaining soldier is -
+{{ soldierArray | json }} -->
 <!-- {{numberSoldiers}} -->

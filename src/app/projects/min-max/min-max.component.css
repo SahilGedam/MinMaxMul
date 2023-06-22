@@ -1,6 +1,7 @@
 .error-color{
     background-color: red;
     color: red;
+   
 }
 .non-error{
     border: 1px solid green;
@@ -9,4 +10,31 @@
 .error{
     border: 1px solid red;
     color: red;
+}
+.container{
+    width: 50%;
+    margin-top: 50px;
+    /* display:flex; */
+    align-items: center;
+    justify-content: center;
+}
+button{
+    padding: 10px;
+    margin: 20px;
+}
+.form-div{
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* border: 10px solid rgb(57, 47, 203); */
+}
+
+.button-div{
+    /* border: 10px solid red; */
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }

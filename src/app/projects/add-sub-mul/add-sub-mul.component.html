@@ -39,16 +39,16 @@
       div
     </button>
   </div>
-  <div *ngIf="!valid">
+  <!-- <div *ngIf="!valid">
     <small class="text-danger">Enter valid number</small>
-  </div>
+  </div> -->
   <div *ngIf="num1.errors && num1.touched">
     <small class="text-danger">Enter valid number 1</small>
   </div>
   <div *ngIf="num2.errors && num2.touched">
     <small class="text-danger">Enter valid number 2</small>
   </div>
-  <div *ngIf="clicked">
+  <div *ngIf="valid">
     <h3>result is {{ result }}</h3>
   </div>
 </div>

@@ -1,0 +1,14 @@
+.container{
+    margin-top: 30px;
+    width: 50%;
+}
+.button-div{
+    /* border: 10px solid red; */
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+button {
+    margin: 10px;
+}
